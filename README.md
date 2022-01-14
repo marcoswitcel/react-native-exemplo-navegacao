@@ -1,7 +1,7 @@
 # Exemplo de uso das APIs de navegação do React Native
 
 O material didático em vídeo estudado pode ser encontrado no YouTube, na playlist [Curso Reac Native (aprendize) - One Bit Code](https://www.youtube.com/playlist?list=PLdDT8if5attEd4sRnZBIkNihR-_tE612_). É uma série de vídeos sobre desenvolvimento de aplicações mobile com React Native.
-A API usada para trabalhar com navegações no app é apresentada e demonstrada nos seguintes vídeos em específico:
+A API usada para trabalhar com navegação na aplicação é apresentada e demonstrada nos seguintes vídeos em específico:
 
 - [Navegação (StackNavigator, TabNavigator e Drawer) - Aula 7 - Parte 1 | Curso React Native (aprendiz)](https://www.youtube.com/watch?v=O49tGxZBvNw&list=PLdDT8if5attEd4sRnZBIkNihR-_tE612_&index=17)
 - [Navegação (StackNavigator, TabNavigator e Drawer) - Aula 7 - Parte 2 | Curso React Native (aprendiz)](https://www.youtube.com/watch?v=RGp5xdidde8&list=PLdDT8if5attEd4sRnZBIkNihR-_tE612_&index=18)
