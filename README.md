@@ -13,15 +13,15 @@ Primeiro instale o `Expo`, caso não tenha.
 [Documentação detalhada para instalar](https://docs.expo.dev/get-started/installation/), ou digite o sguinte comando no terminal:
 
 ```bash
-$ npm install --global expo-cli
+npm install --global expo-cli
 ```
 
 A partir daí basta clonar este repositório, instalar as dependências do NodeJS e rodar `npm run start`.
 Exemplo completo abaixo:
 
 ```bash
-$ cd <pasta-deste-repositorio>
-$ npm install
+cd <pasta-deste-repositorio>
+npm install
 npm run start
 ```
 
@@ -34,20 +34,20 @@ Esse repositório foi criado usando a `expo-cli`
 
 ```bash
 # criando o projeto com o expo (template blank)
-$ expo init react-native-exemplo-navegacao
+expo init react-native-exemplo-navegacao
 # Instalando as dependências do react-navitaion para react native
-$ npm install @react-navigation/native
-$ npm install @react-navigation/stack
-$ npm install @react-navigation/drawer
-$ npm install @react-navigation/bottom-tabs
+npm install @react-navigation/native
+npm install @react-navigation/stack
+npm install @react-navigation/drawer
+npm install @react-navigation/bottom-tabs
 # dependências para o expo (https://reactnavigation.org/docs/5.x/getting-started)
-$ expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
 # SQlite e relacionados
-$ expo install expo-file-system expo-asset
-$ expo install expo-sqlite
+expo install expo-file-system expo-asset
+expo install expo-sqlite
 
 # instalando as dependências necessárias para trabalhar com a câmera
-$ expo install expo-camera expo-contacts expo-sensors
+expo install expo-camera expo-contacts expo-sensors
 ```
 
 ## Referências
