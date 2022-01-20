@@ -41,9 +41,10 @@ $ npm install @react-navigation/stack
 $ npm install @react-navigation/drawer
 $ npm install @react-navigation/bottom-tabs
 # dependências para o expo (https://reactnavigation.org/docs/5.x/getting-started)
-$ expo install react-native-screens react-native-safe-area-context
 $ expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
-
+# SQlite e relacionados
+$ expo install expo-file-system expo-asset
+$ expo install expo-sqlite
 
 # instalando as dependências necessárias para trabalhar com a câmera
 $ expo install expo-camera expo-contacts expo-sensors
@@ -54,3 +55,5 @@ $ expo install expo-camera expo-contacts expo-sensors
 - React Navigation Getting Started DOC [https://reactnavigation.org/docs/getting-started](https://reactnavigation.org/docs/getting-started)
 - Instalação da ferramenta ExpoCli [https://docs.expo.dev/get-started/installation/](https://docs.expo.dev/get-started/installation/)
 - Utilização do `jsconfig.json` e diretiva de compilação `checkJs` [https://code.visualstudio.com/docs/languages/jsconfig](https://code.visualstudio.com/docs/languages/jsconfig)
+- [Configurando o SQLite no expo](https://docs.expo.dev/versions/v44.0.0/sdk/sqlite/)
+- [Using SQLite in React Native & Expo](https://reactdevstation.github.io/2020/04/04/sqllite.html)
