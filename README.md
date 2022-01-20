@@ -22,7 +22,7 @@ Exemplo completo abaixo:
 ```bash
 $ cd <pasta-deste-repositorio>
 $ npm install
-$ npm run start
+npm run start
 ```
 
 Para testar, será necessário instalar o [App do Expo na Google Play](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=pt_BR&gl=US), ou na Apple Store se tiver um Iphone.
