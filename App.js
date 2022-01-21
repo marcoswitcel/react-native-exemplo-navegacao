@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -18,31 +18,20 @@ const db = SQLite.openDatabase('db.testDb')
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function Tabs() {
-  const [ contactsList, setContactsList] = useState([{
-    nome: 'Teste Do Testes',
-    telefone: '(99) 99999-9999',
-    endereco: 'Rua das Flores',
-    numero: '165',
-    profissao: 'TI',
-  },{
-    nome: 'Teste Do Teste',
-    telefone: '(99) 99999-9999',
-    endereco: 'Rua das Flores',
-    numero: '165',
-    profissao: 'TI',
-  }]);
+function Tabs({ route }) {
+  const { contactsListRef } = route.params;
 
   return (
     <Tab.Navigator>
       <Tab.Screen name="AppContacts" component={AppContacts} />
-      <Tab.Screen name="Contacts" component={Contacts} initialParams={{ contactsList }} />
+      <Tab.Screen name="Contacts" component={Contacts} initialParams={{ contactsListRef }} />
     </Tab.Navigator>
   )
 }
 
 export default function App() {
-  
+  const contactsListRef = useRef([]);
+
   useEffect(() => {
     db.transaction((tx) => {
       tx.executeSql(
@@ -53,9 +42,16 @@ export default function App() {
         if (rows._array[0]['result'] === 0) {
           tx.executeSql(
             'INSERT INTO contacts (nome, telefone, endereco, numero, profissao) VALUES (?,?,?,?,?)',
-            ['pessoa1', '99999-9999', 'casa', '111', 'Prosissão']
+            ['Nome de teste', '99999-9999', 'casa', '111', 'Profissão']
+          );
+          tx.executeSql(
+            'INSERT INTO contacts (nome, telefone, endereco, numero, profissao) VALUES (?,?,?,?,?)',
+            ['Nome de teste 2', '99999-9999', 'casa', '111', 'Profissão']
           );
         }
+        tx.executeSql('SELECT * FROM contacts', [], (_, { rows }) => {
+          contactsListRef.current = rows._array;
+        });
       })
     });
   }, []);
@@ -63,7 +59,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="AppContacts" component={Tabs} />
+        <Stack.Screen options={{ headerShown: false}} name="Geral" component={Tabs} initialParams={{ contactsListRef }} />
         <Stack.Screen name="Information" component={Information} />
       </Stack.Navigator>
     </NavigationContainer>

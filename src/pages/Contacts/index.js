@@ -4,10 +4,10 @@ import { Text, View } from 'react-native';
 
 export default ({ route, navigation }) => (
     <View style={{marginTop: 60}}>
-        { route.params?.contactsList?.length && route.params.contactsList.map((item) => (
+        { route.params.contactsListRef.current.map((item) => (
             <View>
-                <Text>Nome: Teste Do Teste</Text>
-                <Text>Telefon: (99) 99999-9999</Text>
+                <Text>Nome: {item.nome}</Text>
+                <Text>Telefon: {item.telefone}</Text>
                 <Text onPress={() => navigation.navigate('Information', item)}>
                     Information...
                 </Text>
