@@ -7,8 +7,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Contacts from './src/pages/Contacts';
 import Information from './src/pages/Information';
 import AddContact from './src/pages/AddContact';
-import AppContacts from './src/pages/AppContacts';
+import Dashboard from './src/pages/Dashboard';
 import { ContactRepository } from './src/pages/repository/ContactRepository';
+import { Ionicons } from '@expo/vector-icons';
 
 
 /**
@@ -24,8 +25,23 @@ function Tabs({ route }) {
 
   return (
     <Tab.Navigator>
-      <Tab.Screen options={{ title: 'Tela Inicial' }} name="AppContacts" component={AppContacts} />
-      <Tab.Screen options={{ title: 'Lista de Contatos' }} name="Contacts" component={Contacts} initialParams={{ contactsListRef }} />
+      <Tab.Screen
+        options={{
+          title: 'Tela Inicial',
+          tabBarIcon:  ({ color, size}) => <Ionicons name="home-outline" size={size} color={color} />
+        }}
+        name="Dashboard"
+        component={Dashboard}
+      />
+      <Tab.Screen
+        options={{
+          title: 'Lista de Contatos',
+          tabBarIcon: ({ color, size}) => <Ionicons name="list" size={size} color={color} />
+        }}
+        name="Contacts"
+        component={Contacts}
+        initialParams={{ contactsListRef }}
+      />
     </Tab.Navigator>
   )
 }
