@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Contacts from './src/pages/Contacts';
 import Information from './src/pages/Information';
+import AddContact from './src/pages/AddContact';
 import AppContacts from './src/pages/AppContacts';
 import { ContactRepository } from './src/pages/repository/ContactRepository';
 
@@ -23,8 +24,8 @@ function Tabs({ route }) {
 
   return (
     <Tab.Navigator>
-      <Tab.Screen name="AppContacts" component={AppContacts} />
-      <Tab.Screen name="Contacts" component={Contacts} initialParams={{ contactsListRef }} />
+      <Tab.Screen options={{ title: 'Tela Inicial' }} name="AppContacts" component={AppContacts} />
+      <Tab.Screen options={{ title: 'Lista de Contatos' }} name="Contacts" component={Contacts} initialParams={{ contactsListRef }} />
     </Tab.Navigator>
   )
 }
@@ -39,8 +40,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen options={{ headerShown: false}} name="Geral" component={Tabs} initialParams={{ contactsListRef }} />
-        <Stack.Screen name="Information" component={Information} />
+        <Stack.Screen options={{ headerShown: false}} name="Container" component={Tabs} initialParams={{ contactsListRef }} />
+        <Stack.Screen options={{ title: 'Dados do Contato' }} name="Information" component={Information} />
+        <Stack.Screen name="AddContact" component={AddContact} />
       </Stack.Navigator>
     </NavigationContainer>
   );
