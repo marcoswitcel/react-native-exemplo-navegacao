@@ -1,4 +1,4 @@
-import DB from "../Database";
+import DB from "../database";
 
 export class ContactRepository {
     static async getAll () {
