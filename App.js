@@ -58,7 +58,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen options={{ headerShown: false}} name="Container" component={Tabs} initialParams={{ contactsListRef }} />
         <Stack.Screen options={{ title: 'Dados do Contato' }} name="Information" component={Information} />
-        <Stack.Screen name="AddContact" component={AddContact} />
+        <Stack.Screen options={{ title: 'Cadastro de Contato' }} name="AddContact" component={AddContact} />
       </Stack.Navigator>
     </NavigationContainer>
   );
