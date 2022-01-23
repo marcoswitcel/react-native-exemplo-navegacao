@@ -24,6 +24,11 @@ export default () => {
                 (saved) => {
                     if (saved) {
                         alert('Cadastrado com sucesso!');
+                        setNome('');
+                        setTelefone('');
+                        setEndereco('');
+                        setNumero('');
+                        setProfissao('');
                     } else {
                         alert('Algum problema ocorreu ao cadastrar!');
                     }
@@ -35,15 +40,15 @@ export default () => {
     return (
         <View style={style.container}>
             <Text style={style.label}>Nome</Text>
-            <TextInput style={style.input} onChange={(event) => setNome(event.nativeEvent.text)} />
+            <TextInput style={style.input} onChange={(event) => setNome(event.nativeEvent.text)} value={nome} />
             <Text style={style.label}>Telefone</Text>
-            <TextInput style={style.input} onChange={(event) => setTelefone(event.nativeEvent.text)} />
+            <TextInput style={style.input} onChange={(event) => setTelefone(event.nativeEvent.text)} value={telefone} />
             <Text style={style.label}>Endereço</Text>
-            <TextInput style={style.input} onChange={(event) => setEndereco(event.nativeEvent.text)} />
+            <TextInput style={style.input} onChange={(event) => setEndereco(event.nativeEvent.text)} value={endereco} />
             <Text style={style.label}>Número</Text>
-            <TextInput style={style.input} onChange={(event) => setNumero(event.nativeEvent.text)} />
+            <TextInput style={style.input} onChange={(event) => setNumero(event.nativeEvent.text)} value={numero} />
             <Text style={style.label}>Profissão</Text>
-            <TextInput style={[style.input, style.lastInput]} onChange={(event) => setProfissao(event.nativeEvent.text)} />
+            <TextInput style={[style.input, style.lastInput]} onChange={(event) => setProfissao(event.nativeEvent.text)} value={profissao} />
 
             <Button
                 title='Cadastrar'
