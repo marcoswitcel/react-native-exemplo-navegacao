@@ -11,4 +11,7 @@ export const style = StyleSheet.create({
         borderColor: 'black',
         borderWidth: 1,
     },
+    lastInput: {
+        marginBottom: 15
+    },
 });
