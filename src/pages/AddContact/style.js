@@ -10,9 +10,11 @@ export const style = StyleSheet.create({
   input: {
     borderColor: 'black',
     borderWidth: 1,
+    paddingLeft: 10,
+    marginBottom: 5,
   },
   lastInput: {
-    marginBottom: 15
+    marginBottom: 15,
   },
 });
 
