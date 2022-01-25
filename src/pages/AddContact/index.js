@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Text, TextInput, View, Button } from 'react-native';
+import { Text, TextInput, View, Button, Alert } from 'react-native';
 import { ContactRepository } from '../repository/ContactRepository';
 import style from './style';
 
 
-export const AddContact = () => {
+export const AddContact = ({ navigation }) => {
   const [ nome, setNome ] = useState('');
   const [ telefone, setTelefone ] = useState('');
   const [ endereco, setEndereco ] = useState('');
@@ -14,7 +14,7 @@ export const AddContact = () => {
   const saveHandler = () => {
 
     if ([ nome, telefone, endereco, numero, profissao].some(value => value.trim() === '')) {
-      alert('Por favor preencha todos os campos');
+      Alert.alert('Campo obrigatórios', 'Por favor preencha todos os campos');
       return;
     }
     
@@ -23,7 +23,15 @@ export const AddContact = () => {
       .then(
         (saved) => {
           if (saved) {
-            alert('Cadastrado com sucesso!');
+            Alert.alert('Cadastrado com sucesso!', 'O que deseja fazer?', [
+              {
+                text: 'Cadastrar mais',
+              },
+              {
+                text: 'Ir para lista de contatos',
+                onPress: () => navigation.navigate('Contacts')
+              }
+            ]);
             setNome('');
             setTelefone('');
             setEndereco('');
