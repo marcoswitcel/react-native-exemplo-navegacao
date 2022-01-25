@@ -3,6 +3,28 @@ import DB from '../database';
 export class ContactRepository {
 
   /**
+   * @constant
+   * @type {Set<() => void>}
+   */
+  static onStoreListeners = new Set;
+
+  /**
+   * @private
+   * @param {'store'} type
+   */
+  static runListeners(type) {
+    if (type !== 'store') return;
+
+    for (const handler of this.onStoreListeners) {
+      try {
+        handler();
+      } catch(ex) {
+        console.error(ex);
+      }
+    }
+  }
+
+  /**
    * 
    * @param {object} param0
    * @param {string} param0.nome
@@ -27,6 +49,8 @@ export class ContactRepository {
           reject,
         );
       });
+
+      this.runListeners('store');
 
       return true;
 
