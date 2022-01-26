@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FlatList, Text, View, TouchableOpacity } from 'react-native';
+import ContacItem from '../../components/ContactItem';
 import { ContactRepository } from '../../repository/ContactRepository';
 import style from './style';
 
@@ -20,14 +21,7 @@ export const Contacts = ({ navigation }) => {
         style={style.listContainer}
         data={contactsList}
         renderItem={({ item, index }) => (
-          <TouchableOpacity onPress={() => navigation.navigate('Information', item)}>
-            <View style={style.listItem}>
-              <Text>Nº: {index + 1}</Text>
-              <Text>Nome: {item.nome}</Text>
-              <Text>Telefone: {item.telefone}</Text>
-              <Text>Ver mais</Text>
-            </View>
-          </TouchableOpacity>
+          <ContacItem contact={item} number={index + 1} navigation={navigation}  />
         )}
         keyExtractor={(item) => item.id}
       />
