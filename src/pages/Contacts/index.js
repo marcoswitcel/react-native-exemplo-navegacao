@@ -15,8 +15,9 @@ export const Contacts = ({ navigation }) => {
   }, []);
 
   return (
-    <View style={style.listContainer}>
+    <View>
       <FlatList
+        style={style.listContainer}
         data={contactsList}
         renderItem={({ item, index }) => (
           <TouchableOpacity onPress={() => navigation.navigate('Information', item)}>
