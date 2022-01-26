@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, Text, View, TouchableOpacity } from 'react-native';
+import { FlatList, View } from 'react-native';
 import ContacItem from '../../components/ContactItem';
 import { ContactRepository } from '../../repository/ContactRepository';
 import style from './style';
