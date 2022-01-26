@@ -3,12 +3,17 @@ import DB from '../database';
 export class ContactRepository {
 
   /**
+   * Set que conterá todos os `listeners` que devem rodar ao
+   * ocorrer um cadstro (store) de novo registro no banco
+   * 
    * @constant
    * @type {Set<() => void>}
    */
   static onStoreListeners = new Set;
 
   /**
+   * Método que auxilia na executação dos `listeners` cadastrados
+   * 
    * @private
    * @param {'store'} type
    */
@@ -25,6 +30,7 @@ export class ContactRepository {
   }
 
   /**
+   * Grava um novo contato na tabela de contato
    * 
    * @param {object} param0
    * @param {string} param0.nome
@@ -60,13 +66,19 @@ export class ContactRepository {
     }
   }
 
+  /**
+   * Pega todos os registros da tabela de contatos
+   * ordenados por nome de forma crescente
+   * 
+   * @returns {Promise<object[]>}
+   */
   static async getAll () {
     const tx = await new Promise((resolve, reject) => {
       DB.transaction(resolve, reject);
     });
 
     return await new Promise((resolve, reject) => {
-      tx.executeSql('SELECT * FROM contacts', [], (_, { rows }) => resolve(rows._array), reject);
+      tx.executeSql('SELECT * FROM contacts ORDER BY nome ASC', [], (_, { rows }) => resolve(rows._array), reject);
     });
   }
 };
