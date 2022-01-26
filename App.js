@@ -11,11 +11,6 @@ import { ContactRepository } from './src/pages/repository/ContactRepository';
 import { Ionicons } from '@expo/vector-icons';
 
 
-/**
- * @TODO desinstalar essas duas dependências `expo-file-system expo-asset`
- * e testar se tudo continuar funcionando
- */
-
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
