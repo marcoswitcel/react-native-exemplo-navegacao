@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, TextInput, View, Button, Alert } from 'react-native';
+import { Text, TextInput, Button, Alert, Pressable, Keyboard } from 'react-native';
 import { ContactRepository } from '../repository/ContactRepository';
 import style from './style';
 
@@ -46,7 +46,7 @@ export const AddContact = ({ navigation }) => {
   }
 
   return (
-    <View style={style.container}>
+    <Pressable style={style.container} onPress={Keyboard.dismiss} >
       <Text style={style.label}>Nome</Text>
       <TextInput style={style.input} onChange={(event) => setNome(event.nativeEvent.text)} value={nome} />
       <Text style={style.label}>Telefone</Text>
@@ -62,7 +62,7 @@ export const AddContact = ({ navigation }) => {
         title='Cadastrar'
         onPress={saveHandler}
       />
-    </View>
+    </Pressable>
   )
 };
 
