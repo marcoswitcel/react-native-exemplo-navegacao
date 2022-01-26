@@ -20,8 +20,11 @@ A partir daí basta clonar este repositório, instalar as dependências do NodeJ
 Exemplo completo abaixo:
 
 ```bash
+# Navegando para a pasta raíz do projeto
 cd <pasta-deste-repositorio>
+# instalando as dependências
 npm install
+# rodando o comando que sobe o server de desenvolvimento
 npm run start
 ```
 
