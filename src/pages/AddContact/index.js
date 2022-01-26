@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Text, TextInput, Button, Alert, Pressable, Keyboard } from 'react-native';
-import { ContactRepository } from '../repository/ContactRepository';
+import { ContactRepository } from '../../repository/ContactRepository';
 import style from './style';
 
 

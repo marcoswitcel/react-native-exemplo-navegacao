@@ -7,7 +7,7 @@ import Contacts from './src/pages/Contacts';
 import Information from './src/pages/Information';
 import AddContact from './src/pages/AddContact';
 import Dashboard from './src/pages/Dashboard';
-import { ContactRepository } from './src/pages/repository/ContactRepository';
+import { ContactRepository } from './src/repository/ContactRepository';
 import { Ionicons } from '@expo/vector-icons';
 
 
