@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, View } from 'react-native';
+import { SectionList, Text, View } from 'react-native';
 import ContacItem from '../../components/ContactItem';
 import { ContactRepository } from '../../repository/ContactRepository';
+import { groupByFirstLetter } from '../../utils';
 import style from './style';
 
 
@@ -17,11 +18,15 @@ export const Contacts = ({ navigation }) => {
 
   return (
     <View>
-      <FlatList
+      <SectionList
         style={style.listContainer}
+        sections={groupByFirstLetter(contactsList)}
         data={contactsList}
         renderItem={({ item, index }) => (
           <ContacItem contact={item} number={index + 1} navigation={navigation}  />
+        )}
+        renderSectionHeader={({ section: { title }}) => (
+          <Text style={style.listHeadings}>{title}</Text>
         )}
         keyExtractor={(item) => item.id}
       />

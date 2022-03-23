@@ -9,13 +9,14 @@ export const style = StyleSheet.create({
   left: {
     alignSelf: 'center',
     paddingVertical: 10,
-    width: 30,
+    width: 22,
   },
   numberText: {
+    fontSize: 12,
     textAlign: 'right',
   },
   right: {
-    paddingHorizontal: 13,
+    paddingHorizontal: 14,
     marginVertical: 10,
     flexGrow: 1,
   },
