@@ -1,6 +1,6 @@
 # Exemplo de uso das APIs de navegação do React Native
 
-O material didático estudado pode ser encontrado no YouTube no link: [Curso React Native (aprendize) - One Bit Code](https://www.youtube.com/playlist?list=PLdDT8if5attEd4sRnZBIkNihR-_tE612_). Esta playlist contém uma série de vídeos sobre desenvolvimento de aplicações mobile com React Native.
+O material didático estudado pode ser encontrado no YouTube no link: [Curso React Native (aprendize) - One Bit Code](https://www.youtube.com/playlist?list=PLdDT8if5attEd4sRnZBIkNihR-_tE612_). A playlist contém uma série de vídeos sobre desenvolvimento de aplicações mobile com React Native.
 
 A API usada para trabalhar com navegação na aplicação é apresentada e demonstrada nos seguintes vídeos em específico:
 
@@ -23,7 +23,7 @@ Exemplo completo abaixo:
 
 ```bash
 # Navegando para a pasta raíz do projeto
-cd <pasta-deste-repositorio>
+cd react-native-exemplo-navegacao
 # instalando as dependências
 npm install
 # rodando o comando que sobe o server de desenvolvimento
@@ -49,9 +49,6 @@ npm install @react-navigation/bottom-tabs
 expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
 # SQlite e relacionados
 expo install expo-sqlite
-
-# instalando as dependências necessárias para trabalhar com a câmera
-expo install expo-camera expo-contacts expo-sensors
 ```
 
 ## Referências
